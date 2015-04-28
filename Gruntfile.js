@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         uglify : {
             lib : {
                 files : {
-                    'jsresource.min.js':['index.js', 'lib/*.js']
+                    'dest/jsresource.min.js':['index.js', 'lib/*.js']
                 }
             }
         }
