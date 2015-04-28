@@ -31,11 +31,19 @@ module.exports = function (grunt) {
             all: {
                 src: ['Gruntfile.js', 'lib/{,*/}*.js']
             }
+        },
+        
+        uglify : {
+            lib : {
+                files : {
+                    'jsresource.min.js':['index.js', 'lib/*.js']
+                }
+            }
         }
         
     });
 
-    grunt.registerTask('default', ['clean', 'jshint']);
+    grunt.registerTask('default', ['clean', 'jshint', 'uglify']);
     
     console.log('----------------------------------');
     console.log('JSResource');
