@@ -33,6 +33,12 @@ module.exports = function (grunt) {
             }
         },
         
+        mochaTest: {
+            test : {
+                src: ['test/**/*.js']
+            }
+        },
+        
         uglify : {
             lib : {
                 files : {
@@ -43,7 +49,7 @@ module.exports = function (grunt) {
         
     });
 
-    grunt.registerTask('default', ['clean', 'jshint', 'uglify']);
+    grunt.registerTask('default', ['clean', 'jshint', 'mochaTest', 'uglify']);
     
     console.log('----------------------------------');
     console.log('JSResource');
