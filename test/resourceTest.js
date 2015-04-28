@@ -1,13 +1,18 @@
 'use strict';
 
 var assert = require("assert")
+var Resource = require("../lib/resource")
+var Relation = require("../lib/relation")
 
-describe('Array', function () {
+describe('Resource', function () {
 
-    describe('#indexOf()', function () {
-        it('should return -1 when the value is not present', function () {
-            assert.equal(-1, [1, 2, 3].indexOf(5));
-            assert.equal(-1, [1, 2, 3].indexOf(0));
+    describe('Relation', function () {
+        it('should add relation', function () {
+            var resource = new Resource();
+            var testRel = new Relation('test');
+            testRel.href = 'blub';
+            resource.addRelation(testRel);
+            assert.equal(resource.relations.length, 1);
         })
     })
 

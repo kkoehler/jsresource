@@ -23,6 +23,13 @@ module.exports = function (grunt) {
             }
         },
 
+        watch : {
+            js : {
+                files: ['**/*.js'],
+                tasks: ['jshint', 'mochaTest']
+            }
+        },
+        
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
