@@ -18,12 +18,29 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     dot: true,
-                    src: ['.tmp']}]
+                    src: ['.tmp']
+                        }]
+            }
+        },
+
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                reporter: require('jshint-stylish')
+            },
+            all: {
+                src: ['Gruntfile.js', 'lib/{,*/}*.js']
             }
         }
+        
     });
 
-    grunt.registerTask('default', [
-    'clean'
-  ]);
+    grunt.registerTask('default', ['clean', 'jshint']);
+    
+    console.log('----------------------------------');
+    console.log('JSResource');
+    console.log('App version: '+ appConfig.version);
+    console.log('----------------------------------');
+    console.log('');
+    
 };
